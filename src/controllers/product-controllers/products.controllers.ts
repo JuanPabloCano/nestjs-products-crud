@@ -1,11 +1,18 @@
 import { ProductsServices } from '../../services/product-services/products.services';
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { Product } from '../../models/product/Product';
 
 @Controller()
 export class ProductController {
-  constructor(private readonly productsServices: ProductsServices) {
-  }
+  constructor(private readonly productsServices: ProductsServices) {}
 
   @Post('/api/products')
   public async createProduct(@Body() product: Product): Promise<Product> {

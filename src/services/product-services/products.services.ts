@@ -6,9 +6,8 @@ import { Model } from 'mongoose';
 @Injectable()
 export class ProductsServices {
   constructor(
-    @InjectModel('products') private readonly products: Model<ProductDocument>
-  ) {
-  }
+    @InjectModel('products') private readonly products: Model<ProductDocument>,
+  ) {}
 
   public async createProduct(product: Product): Promise<Product> {
     const newProduct = new this.products(product);
